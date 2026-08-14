@@ -4,7 +4,7 @@ class Solution {
     public int subarraysDivByK(int[] arr, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        int prefixSum = 0;
+        long prefixSum = 0;
         int count = 0;
 
         // Remainder 0 has occurred once initially
@@ -13,7 +13,7 @@ class Solution {
         for (int num : arr) {
             prefixSum += num;
 
-            int remainder = prefixSum % k;
+            int remainder =(int) (prefixSum % k);
 
             // Java can give negative remainder
             if (remainder < 0) {
